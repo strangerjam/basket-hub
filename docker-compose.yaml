@@ -1,0 +1,57 @@
+services:
+
+  postgres:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    networks:
+      - app-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-U", "$POSTGRES_USER"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+
+  streamlit:
+    build:
+      context: ./streamlit
+      dockerfile: Dockerfile
+      args:
+        - DB_NAME=${DB_NAME}
+        - DB_USER=${DB_STREAMLIT_USER}
+        - DB_PASSWORD=${DB_STREAMLIT_PASSWORD}
+    container_name: streamlit-web
+    ports:
+      - "8501:8501"
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_STREAMLIT_USER}
+      - DB_PASSWORD=${DB_STREAMLIT_PASSWORD}
+    env_file:
+      - .env
+    networks:
+      - app-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
+    driver: bridge
