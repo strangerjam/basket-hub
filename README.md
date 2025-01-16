@@ -23,7 +23,7 @@ docker compose -f baskethub-app/docker-compose.yaml stop
 ---
 # Airflow
 
-start
+up
 ```bash
 docker compose -f airflow/docker-compose.yaml up --build -d
 ```
