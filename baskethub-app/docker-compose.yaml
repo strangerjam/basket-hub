@@ -19,7 +19,7 @@ services:
       - app-network
     restart: always
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready", "-U", "$POSTGRES_USER"]
+      test: ["CMD-SHELL", "pg_isready", "-U", "${DB_USER}"]
       interval: 5s
       timeout: 5s
       retries: 3
@@ -64,7 +64,9 @@ services:
       /usr/bin/mc mb minio/${STORAGE_BUCKET} --ignore-existing;
       /usr/bin/mc anonymous set public minio/${STORAGE_BUCKET};
       /usr/bin/mc admin user add minio ${STORAGE_STREAMLIT_USER} ${STORAGE_STREAMLIT_PASSWORD};
-      /usr/bin/mc admin policy attach minio readonly readwrite --user ${STORAGE_STREAMLIT_USER}
+      /usr/bin/mc admin policy attach minio readonly readwrite writeonly --user ${STORAGE_STREAMLIT_USER};
+      /usr/bin/mc admin user add minio ${STORAGE_AIRFLOW_USER} ${STORAGE_AIRFLOW_PASSWORD};
+      /usr/bin/mc admin policy attach minio readonly readwrite writeonly --user ${STORAGE_AIRFLOW_USER}
       "
 
   streamlit:
@@ -99,7 +101,7 @@ services:
 volumes:
   pgdata:
   minio-storage:
-
+  
 networks:
   app-network:
     driver: bridge
