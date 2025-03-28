@@ -25,20 +25,20 @@ docker compose -f baskethub-app/docker-compose.yaml stop
 
 up
 ```bash
-docker compose -f airflow/docker-compose.yaml up --build -d
+docker compose -f baskethub-airflow/docker-compose.yaml up --build -d
 ```
 
 down
 ```bash
-docker compose -f airflow/docker-compose.yaml down -v
+docker compose -f baskethub-airflow/docker-compose.yaml down -v
 ```
 
 start
 ```bash
-docker compose -f airflow/docker-compose.yaml start
+docker compose -f baskethub-airflow/docker-compose.yaml start
 ```
 
 stop
 ```bash
-docker compose -f airflow/docker-compose.yaml stop
+docker compose -f baskethub-airflow/docker-compose.yaml stop
 ```

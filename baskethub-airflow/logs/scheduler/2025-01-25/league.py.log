@@ -1,0 +1,57 @@
+[2025-01-25T17:06:48.009+0000] {processor.py:186} INFO - Started process (PID=136) to work on /opt/airflow/dags/league.py
+[2025-01-25T17:06:48.009+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/league.py for tasks to queue
+[2025-01-25T17:06:48.011+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.011+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/league.py
+[2025-01-25T17:06:48.020+0000] {processor.py:925} INFO - DAG(s) 'league' retrieved from /opt/airflow/dags/league.py
+[2025-01-25T17:06:48.129+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.129+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:league
+[2025-01-25T17:06:48.132+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.132+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:league
+[2025-01-25T17:06:48.133+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.133+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:league
+[2025-01-25T17:06:48.135+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.135+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:league
+[2025-01-25T17:06:48.136+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.136+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:league
+[2025-01-25T17:06:48.138+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.138+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:league
+[2025-01-25T17:06:48.139+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.139+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:league
+[2025-01-25T17:06:48.139+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.139+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-25T17:06:48.143+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.143+0000] {dag.py:3262} INFO - Creating ORM DAG for league
+[2025-01-25T17:06:48.146+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:06:48.145+0000] {dag.py:4180} INFO - Setting next_dagrun for league to 2026-01-01 00:00:00+00:00, run_after=2027-01-01 00:00:00+00:00
+[2025-01-25T17:06:48.150+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/league.py took 0.145 seconds
+[2025-01-25T17:07:18.357+0000] {processor.py:186} INFO - Started process (PID=146) to work on /opt/airflow/dags/league.py
+[2025-01-25T17:07:18.358+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/league.py for tasks to queue
+[2025-01-25T17:07:18.360+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:07:18.360+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/league.py
+[2025-01-25T17:07:18.369+0000] {processor.py:925} INFO - DAG(s) 'league' retrieved from /opt/airflow/dags/league.py
+[2025-01-25T17:07:18.383+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:07:18.383+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-25T17:07:18.393+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:07:18.393+0000] {dag.py:4180} INFO - Setting next_dagrun for league to 2026-01-01 00:00:00+00:00, run_after=2027-01-01 00:00:00+00:00
+[2025-01-25T17:07:18.460+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/league.py took 0.107 seconds
+[2025-01-25T17:07:48.784+0000] {processor.py:186} INFO - Started process (PID=156) to work on /opt/airflow/dags/league.py
+[2025-01-25T17:07:48.785+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/league.py for tasks to queue
+[2025-01-25T17:07:48.787+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:07:48.787+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/league.py
+[2025-01-25T17:07:48.797+0000] {processor.py:925} INFO - DAG(s) 'league' retrieved from /opt/airflow/dags/league.py
+[2025-01-25T17:07:48.812+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:07:48.812+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-25T17:07:48.890+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:07:48.890+0000] {dag.py:4180} INFO - Setting next_dagrun for league to 2026-01-01 00:00:00+00:00, run_after=2027-01-01 00:00:00+00:00
+[2025-01-25T17:07:48.895+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/league.py took 0.117 seconds
+[2025-01-25T17:08:19.244+0000] {processor.py:186} INFO - Started process (PID=166) to work on /opt/airflow/dags/league.py
+[2025-01-25T17:08:19.245+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/league.py for tasks to queue
+[2025-01-25T17:08:19.247+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:08:19.247+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/league.py
+[2025-01-25T17:08:19.257+0000] {processor.py:925} INFO - DAG(s) 'league' retrieved from /opt/airflow/dags/league.py
+[2025-01-25T17:08:19.273+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:08:19.273+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-25T17:08:19.356+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:08:19.356+0000] {dag.py:4180} INFO - Setting next_dagrun for league to 2026-01-01 00:00:00+00:00, run_after=2027-01-01 00:00:00+00:00
+[2025-01-25T17:08:19.362+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/league.py took 0.125 seconds
+[2025-01-25T17:08:49.736+0000] {processor.py:186} INFO - Started process (PID=175) to work on /opt/airflow/dags/league.py
+[2025-01-25T17:08:49.737+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/league.py for tasks to queue
+[2025-01-25T17:08:49.740+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:08:49.739+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/league.py
+[2025-01-25T17:08:49.753+0000] {processor.py:925} INFO - DAG(s) 'league' retrieved from /opt/airflow/dags/league.py
+[2025-01-25T17:08:49.853+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:08:49.853+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-25T17:08:49.861+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:08:49.861+0000] {dag.py:4180} INFO - Setting next_dagrun for league to 2026-01-01 00:00:00+00:00, run_after=2027-01-01 00:00:00+00:00
+[2025-01-25T17:08:49.867+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/league.py took 0.140 seconds
+[2025-01-25T17:09:20.187+0000] {processor.py:186} INFO - Started process (PID=184) to work on /opt/airflow/dags/league.py
+[2025-01-25T17:09:20.188+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/league.py for tasks to queue
+[2025-01-25T17:09:20.190+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:09:20.189+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/league.py
+[2025-01-25T17:09:20.198+0000] {processor.py:925} INFO - DAG(s) 'league' retrieved from /opt/airflow/dags/league.py
+[2025-01-25T17:09:20.211+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:09:20.211+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-25T17:09:20.221+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:09:20.221+0000] {dag.py:4180} INFO - Setting next_dagrun for league to 2026-01-01 00:00:00+00:00, run_after=2027-01-01 00:00:00+00:00
+[2025-01-25T17:09:20.228+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/league.py took 0.046 seconds
+[2025-01-25T17:09:50.504+0000] {processor.py:186} INFO - Started process (PID=194) to work on /opt/airflow/dags/league.py
+[2025-01-25T17:09:50.505+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/league.py for tasks to queue
+[2025-01-25T17:09:50.507+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:09:50.507+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/league.py
+[2025-01-25T17:09:50.517+0000] {processor.py:925} INFO - DAG(s) 'league' retrieved from /opt/airflow/dags/league.py
+[2025-01-25T17:09:50.531+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:09:50.531+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-25T17:09:50.542+0000] {logging_mixin.py:190} INFO - [2025-01-25T17:09:50.542+0000] {dag.py:4180} INFO - Setting next_dagrun for league to 2026-01-01 00:00:00+00:00, run_after=2027-01-01 00:00:00+00:00
+[2025-01-25T17:09:50.550+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/league.py took 0.051 seconds
