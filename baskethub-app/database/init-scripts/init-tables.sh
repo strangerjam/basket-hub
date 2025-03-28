@@ -18,10 +18,10 @@ psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-E
     );
 
     -- insert initial data
-    INSERT INTO league (external_code, code, name) VALUES
-    ('00', 'nba', 'NBA'),
-    ('10', 'wnba', 'WNBA');
+    -- INSERT INTO league (external_code, code, name) VALUES
+    -- ('00', 'nba', 'NBA'),
+    -- ('10', 'wnba', 'WNBA');
 
-    INSERT INTO season (name, year_start, year_end) VALUES
-    ('2024-25', 2024, 2025);
+    -- INSERT INTO season (name, year_start, year_end) VALUES
+    -- ('2024-25', 2024, 2025);
 EOSQL
