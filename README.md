@@ -69,7 +69,6 @@ This table group contains the following tables:
 | name                          | league readable name                                                  | NBA                   |
 | logo_url                      | path to S3 containing the logo image                                  | /logos/nba/league.png |
 </details>
-<br/>
 
 <details>
 <summary><strong>season</strong> - season data for each league</summary>
@@ -81,7 +80,6 @@ This table group contains the following tables:
 | date_start                    | start date of season                                                  | 2024-09-01            |
 | date_end                      | end date of season                                                    | 2025-05-30            |
 </details>
-<br/>
 
 <details>
 <summary><strong>season_type</strong> - type of season: Regular, Playoffs, etc.</summary>
@@ -93,7 +91,6 @@ This table group contains the following tables:
 | name                          | season type readable name                                             | In-Season Tournament  |
 | group                         | a group into which different types of seasons are grouped to enhance the analysis capabilities; Regular Season, In-Season Tournament -> Regular Season | Regular Season        |
 </details>
-<br/>
 
 <details>
 <summary><strong>team</strong> - list of teams and up-to-date information about them</summary>
@@ -111,7 +108,6 @@ This table group contains the following tables:
 | year_active_until             | year up to which the team existed; if the team still exists, then NULL | 1990                     |
 | logo_url                      | path to S3 containing the logo image                                   | /logos/nba/team/dal.png  |
 </details>
-<br/>
 
 <details>
 <summary><strong>player</strong> - list of players and up-to-date information about them</summary>
@@ -131,7 +127,6 @@ This table group contains the following tables:
 | pie                           | player impact estimate (https://www.nbastuffer.com/analytics101/player-impact-estimate-pie/) | 0.89                  |
 | photo_url                     | path to S3 containing the player photo                                | /logos/nba/player/luka_doncic.png |
 </details>
-<br/>
 
 <details>
 <summary><strong>game</strong> - list of completed games</summary>
@@ -144,7 +139,6 @@ This table group contains the following tables:
 | min                           | game duration in minutes                                              | 240                      |
 | arena                         | arena where the game is played                                        | American Airlines Center |
 </details>
-<br/>
 
 <details>
 <summary><strong>game_team_stats</strong> - statistics on completed games for each team</summary>
