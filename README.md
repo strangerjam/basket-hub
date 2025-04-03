@@ -81,7 +81,7 @@ The data model includes the following tables:
 | ----------------------------- |-----------------------------------------------------------------------|-----------------------|
 | code                          | internal code used to run the application                             | in_season             |
 | name                          | season type readable name                                             | In-Season Tournament  |
-| group                         | a group into which different types of seasons are grouped to enhance the analysis capabilities; Regular Season, In-Season Tournament -> Regular Season | Regular Season        |
+| group_name                    | a group into which different types of seasons are grouped to enhance the analysis capabilities; Regular Season, In-Season Tournament -> Regular Season | Regular Season        |
 </details>
 
 <details>
