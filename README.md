@@ -48,15 +48,7 @@ docker compose -f baskethub-airflow/docker-compose.yaml stop
 
 # Data Model
 
-The data model defines two groups of tables: core tables and datamarts.
-
-- **Core tables** are a set of normalized tables intended for operational work of the application.
-
-- **Datamarts**, in turn, are a set of denormalized tables that provide the application with analytical data.
-
-## Core tables
-
-This table group contains the following tables:
+The data model includes the following tables:
 
 <details>
 <summary><strong>league</strong> - information about basketball leagues: NBA, WNBA, etc.</summary>
@@ -102,11 +94,49 @@ This table group contains the following tables:
 | name                          | team readable name                                                     | Dallas Mavericks         |
 | nickname                      | team short, readable name                                              | Mavericks                |
 | abbreviation                  | team abbreviation                                                      | DAL                      |
+| conference                    | team conference                                                        | East                     |
+| division                      | team division                                                          | Atlantic                 |
 | city                          | team city                                                              | Dallas                   |
 | arena                         | team arena                                                             | American Airlines Center |
 | year_founded                  | team year of foundation                                                | 1960                     |
 | year_active_until             | year up to which the team existed; if the team still exists, then NULL | 1990                     |
 | logo_url                      | path to S3 containing the logo image                                   | /logos/nba/team/dal.png  |
+</details>
+
+<details>
+<summary><strong>team_season_stats</strong> - team statistics for each season</summary>
+<br/>
+
+| Field                         | Description                                                           | Data Sample           |
+| ----------------------------- |-----------------------------------------------------------------------|-----------------------|
+| gp                            | number of games playes                                                | 82                    |
+| win                           | number of games won                                                   | 47                    |
+| loss                          | number of game lost                                                   | 35                    |
+| win_pct                       | winning percentage                                                    | 0.573                 |
+| min                           | number of minutes played                                              | 3941                  |
+| off_rating                    | offensive rating                                                      | 117.9                 |
+| def_rating                    | defensive rating                                                      | 115.5                 |
+| net_rating                    | difference between the offensive rating and the defensive rating      | 2.5                   |
+| pace                          | number of possessions a team gets per game                            | 104.2                 |
+| ast_ratio                     | assist ratio                                                          | 21                    |
+| oreb_pct                      | offensive rebound percentage                                          | 0.238                 |
+| dreb_pct                      | defensive rebound percentage                                          | 0.741                 |
+| reb_pct                       | rebound percentage                                                    | 0.489                 |
+| tov_pct                       | turnover percentage                                                   | 0.124                 |
+| gp_rank                       | rank by number of games played                                        | 1                     |
+| win_rank                      | rank by number of games won                                           | 12                    |
+| loss_rank                     | rank by number of games lost                                          | 12                    |
+| win_pct_rank                  | rank by winning percentage                                            | 12                    |
+| min_rank                      | rank by number of minutes played                                      | 26                    |
+| off_rating_rank               | rank by offensive rating                                              | 2                     |
+| def_rating_rank               | rank by defensive rating                                              | 24                    |
+| net_rating_rank               | rank by net rating                                                    | 13                    |
+| pace_rank                     | rank by number of possessions a team gets per game                    | 2                     |
+| ast_ratio_rank                | rank by assist ratio                                                  | 1                     |
+| oreb_pct_rank                 | rank by offensive rebound percentage                                  | 20                    |
+| dreb_pct_rank                 | rank by defensive rebound percentage                                  | 26                    |
+| reb_pct_rank                  | rank by rebound percentage                                            | 24                    |
+| tov_pct_rank                  | rank by turnover percentage                                           | 6                     |
 </details>
 
 <details>
@@ -124,7 +154,7 @@ This table group contains the following tables:
 | pts                           | career points average                                                 | 31.1                  |
 | ast                           | career assists average                                                | 12.1                  |
 | reb                           | career rebounds average                                               | 8.0                   |
-| pie                           | player impact estimate (https://www.nbastuffer.com/analytics101/player-impact-estimate-pie/) | 0.89                  |
+| pie                           | player impact estimate                                                | 0.89                  |
 | photo_url                     | path to S3 containing the player photo                                | /logos/nba/player/luka_doncic.png |
 </details>
 
@@ -137,7 +167,18 @@ This table group contains the following tables:
 | external_id                   | external code received from the source system                         | 1610612742               |
 | date                          | start date of game                                                    | 2024-10-23               |
 | min                           | game duration in minutes                                              | 240                      |
+| overtime_count                | number of overtimes in the game (0 by default)                        | 1                        |
 | arena                         | arena where the game is played                                        | American Airlines Center |
+</details>
+
+<details>
+<summary><strong>game_team</strong> - additional info about the game for each participating team</summary>
+<br/>
+
+| Field                         | Description                                                           | Data Sample           |
+| ----------------------------- |-----------------------------------------------------------------------|-----------------------|
+| is_home                       | true - for home team; false - for road team                           | true                  |
+| outcome                       | enum: win, loss                                                       | win                   |
 </details>
 
 <details>
@@ -146,8 +187,8 @@ This table group contains the following tables:
 
 | Field                         | Description                                                           | Data Sample           |
 | ----------------------------- |-----------------------------------------------------------------------|-----------------------|
-| is_home                       | true - for home team; false - for road team                           | true                  |
-| outcome                       | enum: win, loss                                                       | win                   |
+| period                        | number of the game period                                             | 2                     |
+| period_time                   | number of game seconds, starting from 0                               | 100                   |
 | pts                           | number of points scored                                               | 130                   |
 | fgm                           | number of field goals made                                            | 50                    |
 | fga                           | number of field goals attempts                                        | 70                    |
@@ -174,8 +215,10 @@ This table group contains the following tables:
 
 <br/>
 
-![Data Model - Core](/documentation/data_model-core.png)
+![Data Model - Core](/documentation/data_model.png)
 
+<br/>
 
-
-## Datamarts
+Useful links about calculating statistical measures:
+- https://www.nbastuffer.com/
+- https://captaincalculator.com/sports/basketball/
