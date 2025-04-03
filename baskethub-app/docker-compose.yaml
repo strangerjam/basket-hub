@@ -4,6 +4,12 @@ services:
     build:
       context: ./database
       dockerfile: Dockerfile
+      args:
+        - DB_NAME=${DB_NAME}
+        - DB_STREAMLIT_USER=${DB_STREAMLIT_USER}
+        - DB_STREAMLIT_PASSWORD=${DB_STREAMLIT_PASSWORD}
+        - DB_AIRFLOW_USER=${DB_AIRFLOW_USER}
+        - DB_AIRFLOW_PASSWORD=${DB_AIRFLOW_PASSWORD}
     container_name: postgres-db
     ports:
       - "5432:5432"
